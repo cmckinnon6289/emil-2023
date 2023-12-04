@@ -4,16 +4,82 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Emil Christmas "Card" 2023</title>
-        <script src="script.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+        <script src="script.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>
 <body>
-    <div class="section" id="surface-level">
-        <div class="content">
-            <blockquote></blockquote>
-            <p>hello!</p>
+    <div id="app">
+        <div v-if="valid" id="ecard-content">
+            <div class="section" id="surface-level">
+                <div class="content">
+                    <b>merry christmas</b>
+                    <p>im happy to inform u that the next station is Columbia. Doors will open on the right. Passengers for Surrey change here for a King George train from platform 2.</p>
+                    <p>i have 2 moods. i didnt know how to structure this properly without turning this into essay-<b>style</b> writing so i decided to split this into 2 parts, both of which will make sense without the other. the power of HTML makes this possible (learn html it's fun)!</p>
+                    <p>u can read both or just one, idc lmao.</p>
+                    <div class="columns" id="buttons">
+                        <div class="column is-one-half">
+                            <button class="button is-success black is-fullwidth" onclick="handleModal('stupid-1')">stupid</button>
+                        </div>
+                        <div class="column is-one-half">
+                            <button class="button is-danger is-fullwidth" onclick="handleModal('stupid-2')">also stupid but different stupid</button>
+                        </div>
+                    </span>
+                </div>
+                <div class="content">
+                    <p>hi</p>
+                </div>
+            </div>
+            <div class="modal" id="stupid-2">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">stupid (version 1.1)</p>
+                    </header>
+                    <section class="modal-card-body">
+                        <p class="image" id="idiot-1">
+                            <img src="/assets/img/lmao1.png" alt="not believing othello was a shakespeare play, instead thinking it was a greeting (lmao)">
+                        </p>
+                        <p><i>Diagram</i></p>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button is-danger" onclick="handleModal('stupid-2')">close</button>
+                    </footer>
+                </div>
+            </div>
+            <div class="modal" id="stupid-1">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">stupid (version 2.0)</p>
+                    </header>
+                    <section class="modal-card-body">
+                        <p>im happy to have gotten to know you. considering that the catalyst to most of our friend was the may 2023 ftx (i will die on this hill), i think it's been an astounding success insofar as we have become quite good friends (needless to say imo but who truly knows!).</p>
+                        <p></p>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button is-danger" onclick="handleModal('stupid-1')">close</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <div v-else id="ecard-login">
+            <div class="section">
+                <div class="content">
+                    <p>Please provide your cadet email to access this content.</p>
+                    <div class="field">
+                        <input class="input" type="text" id="email" placeholder="lol69@cdt.cadets.gc.ca">
+                    </div>
+                    <div class="field">
+                        <button class="button is-info is-link" onclick="submitLogin(document.querySelector('#email').value)">Submit</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
 </body>
 </html>

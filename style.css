@@ -13,3 +13,7 @@ blockquote {
 .modal {
     color: black;
 }
+
+.black {
+    color: black!important;
+}
