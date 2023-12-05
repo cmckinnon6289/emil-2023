@@ -1,5 +1,6 @@
 html {
     background-color: black;
+    user-select: none;
 }
 
 body {
@@ -14,6 +15,8 @@ blockquote {
     color: black;
 }
 
-.black {
-    color: black!important;
+@media print {
+    html, body {
+       display: none;
+    }
 }

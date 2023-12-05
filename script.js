@@ -15,7 +15,16 @@ const app = Vue.createApp({
     data() {
         let urlp = new URLSearchParams(window.location.search).get('email') ? new URLSearchParams(window.location.search).get('email') : "lol@empty.com"
         return {
-            valid: urlp === "death"
+            valid: urlp === "ameliaesmaquel@gmail.com"
+        }
+    }
+})
+
+const ethicsApp = Vue.createApp({
+    data() {
+        let p = new URLSearchParams(window.location.search).get('p') ? new URLSearchParams(window.location.search).get('p') : "invalid"
+        return {
+            valid: p === "unlock-ramblings"
         }
     }
 })
